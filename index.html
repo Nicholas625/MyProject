@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Email Tracker - Send Email</title>
+</head>
+<body>
+
+    <h1>Email Tracker System</h1>
+    <h2>Send an Email</h2>
+
+    <?php if (isset($_GET['status'])): ?>
+        <?php if ($_GET['status'] == 'success'): ?>
+            <p class="success">Email sent successfully!</p>
+        <?php elseif ($_GET['status'] == 'error'): ?>
+            <p class="error">There was an error sending the email.</p>
+        <?php endif; ?>
+    <?php endif; ?>
+
+    <form action="process.php" method="POST">
+        <input type="email" name="recipient" placeholder="Recipient Email" required>
+        <input type="text" name="subject" placeholder="Email Subject" required>
+        <textarea name="message" rows="5" placeholder="Email Message" required></textarea>
+        <input type="submit" value="Send Email">
+    </form>
+    <a href="tracker.php">View Tracked Emails</a>
+
+</body>
+</html>
+
