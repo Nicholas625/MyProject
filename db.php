@@ -1,8 +1,8 @@
 <?php
-$host = 'localhost';  // Database host (e.g., localhost)
+$host = 'localhost';  // Database host (i used localhost)
 $dbname = 'email_tracker';  // Database name
-$username = 'root';  // Database username (usually 'root' for local development)
-$password = '';  // Database password (set this according to your configuration)
+$username = 'root';  
+$password = '';  
 
 try {
     $pdo = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
